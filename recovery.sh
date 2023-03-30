@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Are you sure? " -n 1 -r
+read -p "Are you sure? This is irreversable and will be a major headache to fix" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
     exit 1
@@ -17,6 +17,7 @@ then
 
     echo "root:$pass" | chpasswd
 
+    rm -f /root/.ssh/authorized_keys
     echo "All users have now been locked out, root password is now: $pass"
 
 fi
