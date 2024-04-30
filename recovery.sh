@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Are you sure? This is irreversable and will be a major headache to fix" -n 1 -r
+read -p "Are you sure? (Y/N) This is irreversable and will be a major headache to fix" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
     exit 1
